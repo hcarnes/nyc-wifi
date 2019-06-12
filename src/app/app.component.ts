@@ -11,8 +11,8 @@ export class AppComponent {
     layers: [
       tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })
     ],
-    zoom: 5,
-    center: latLng(46.879966, -121.726909)
+    zoom: 11,
+    center: latLng(40.758700379161006, -73.95652770996094),
   };
 
   title = 'nyc-wifi';
