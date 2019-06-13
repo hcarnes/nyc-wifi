@@ -8,12 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { HotspotService } from './hotspot.service'
 import { GeolocationService } from './geolocation.service';
 import { MapComponent } from './components/map/map.component';
+import { DetailsComponent } from './components/details/details.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MapComponent
+    MapComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
