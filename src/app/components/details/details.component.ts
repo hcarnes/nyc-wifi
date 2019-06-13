@@ -16,7 +16,7 @@ export class DetailsComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) => {
-        return this.hotspots.getHotspot(params.get('id'))
+        return this.hotspots.getHotspot(params.get('id'));
       })
     ).subscribe(hs => this.hotspot = hs);
   }

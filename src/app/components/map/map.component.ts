@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { latLng, tileLayer, marker, icon, Layer, LatLng } from 'leaflet';
+import { Component, OnInit, NgZone } from '@angular/core';
+import { latLng, tileLayer, marker, icon, Layer, LatLng, LeafletEvent } from 'leaflet';
 import { HotspotService } from '../../hotspot.service';
 import { GeolocationService } from '../../geolocation.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-map',
@@ -10,19 +11,25 @@ import { GeolocationService } from '../../geolocation.service';
 })
 export class MapComponent implements OnInit {
 
-  constructor(private hotspots: HotspotService, private geolocation: GeolocationService) { }
+  constructor(
+    private hotspots: HotspotService,
+    private geolocation: GeolocationService,
+    private router: Router,
+    private ngZone: NgZone
+    ) { }
 
   ngOnInit() {
     this.hotspots.getHotspots().subscribe((hotspots) => {
       this.layers = hotspots.map((hotspot) => {
         return marker([hotspot.the_geom.coordinates[1], hotspot.the_geom.coordinates[0]], {
+          alt: hotspot.objectid,
           icon: icon({
             iconSize: [25, 41],
             iconAnchor: [13, 41],
             iconUrl: 'leaflet/marker-icon.png',
             shadowUrl: 'leaflet/marker-shadow.png'
           })
-        }).bindPopup(`${hotspot.provider}${hotspot.name && `- ${hotspot.name}` || ""}`)
+        }).on('click', this.clickMarker)
       })
     })
 
@@ -53,5 +60,9 @@ export class MapComponent implements OnInit {
   ];
 
   title = 'nyc-wifi';
+
+  private clickMarker = (event: LeafletEvent) => {
+    this.ngZone.run(() => this.router.navigateByUrl(`/detail/${event.target.options.alt}`));
+  }
 
 }
