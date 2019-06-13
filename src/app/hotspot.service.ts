@@ -24,11 +24,11 @@ type HotspotLocation = {
   postcode: string,
   ntaname: string,
   the_geom: {
-     coordinates: [
-        number,
-        number
-     ],
-     type: string
+    coordinates: [
+      number,
+      number
+    ],
+    type: string
   },
   x: string,
   bin: string,
