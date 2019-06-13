@@ -1,6 +1,6 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, NgZone, Input, SimpleChanges } from '@angular/core';
 import { latLng, tileLayer, marker, icon, Layer, LatLng, LeafletEvent } from 'leaflet';
-import { HotspotService } from '../../hotspot.service';
+import { HotspotService, HotspotLocation } from '../../hotspot.service';
 import { GeolocationService } from '../../geolocation.service';
 import { Router } from '@angular/router';
 
@@ -34,9 +34,20 @@ export class MapComponent implements OnInit {
     })
 
     this.geolocation.getCurrentPosition().subscribe((position) => {
-      this.center = latLng(position.coords.latitude, position.coords.longitude)
+      if (!this.hotspot) {
+        this.center = latLng(position.coords.latitude, position.coords.longitude)
+      }
     })
   }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.hotspot && this.hotspot) {
+      this.center = latLng(this.hotspot.the_geom.coordinates[1], this.hotspot.the_geom.coordinates[0])
+    }
+  }
+
+  @Input()
+  hotspot?: HotspotLocation;
 
   center: LatLng = latLng(40.758700379161006, -73.95652770996094);
 
