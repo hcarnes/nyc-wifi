@@ -8,6 +8,8 @@
   <div style="height: 600px; width: 600px;"
       leaflet
       [leafletOptions]="options"
-      [leafletLayers]="layers">
+      [leafletLayers]="layers"
+      [(leafletCenter)]="center"
+      >
   </div>
 <router-outlet></router-outlet>

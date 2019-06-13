@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { HttpClientModule } from '@angular/common/http';
 import { HotspotService } from './hotspot.service'
+import { GeolocationService } from './geolocation.service';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { HotspotService } from './hotspot.service'
     LeafletModule.forRoot(),
     HttpClientModule,
   ],
-  providers: [HotspotService],
+  providers: [HotspotService, GeolocationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
