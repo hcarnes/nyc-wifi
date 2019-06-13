@@ -12,5 +12,5 @@ export class AppComponent implements OnInit {
   ngOnInit() {
   }
 
-  title = 'nyc-wifi';
+  title = 'NYC Wi-Fi Hotspot Locations';
 }

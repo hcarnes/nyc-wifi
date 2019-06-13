@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { concatAll, first } from 'rxjs/operators';
 
-type HotspotLocation = {
+export type HotspotLocation = {
   bbl: string,
   city: string,
   location: string,
@@ -48,5 +50,16 @@ export class HotspotService {
 
   getHotspots() {
     return this.http.get<HotspotLocation[]>("https://data.cityofnewyork.us/resource/varh-9tsp.json")
+  }
+
+  getHotspot(id: string): Observable<HotspotLocation> {
+    return this.http.get<HotspotLocation[]>("https://data.cityofnewyork.us/resource/varh-9tsp.json", {
+      params: {
+        objectid: id
+      }
+    }).pipe(
+      concatAll(),
+      first(),
+    );
   }
 }
