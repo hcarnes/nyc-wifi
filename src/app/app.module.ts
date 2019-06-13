@@ -7,11 +7,13 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { HttpClientModule } from '@angular/common/http';
 import { HotspotService } from './hotspot.service'
 import { GeolocationService } from './geolocation.service';
+import { MapComponent } from './components/map/map.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
