@@ -1,6 +1,5 @@
-<pre>{{ hotspot | json }}</pre>
+<ul>
+  <li>{{hotspot.location}}, {{hotspot.city}} {{hotspot.postcode}}</li>
+  <li>{{hotspot.type}} wifi provide by {{hotspot.provider}} ({{hotspot.location_t}})  </li>
+</ul>
 <app-map [hotspot]="hotspot"></app-map>
-<p style="text-align:center">
-  <span>Hotspot Name:</span>
-  <span>Activation Status:</span>
-</p>
