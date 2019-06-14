@@ -1,27 +1,20 @@
-# NycWifi
+# 🔥 NYC Wifi Hotpots 🔥   
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
+Users can find NYC wifi hotspots near them on a map, click on a hotspot marker, and view details about the hotspot. Data fetech from [NYC's Open Data API](https://data.cityofnewyork.us/Social-Services/NYC-Wi-Fi-Hotspot-Locations/a9we-mtpn).
 
-## Development server
+## Installation
+Clone this repository.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve --open`
 
-## Code scaffolding
+## Contributing
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Bug reports and pull requests are welcome on GitHub at https://github.com/hcarnes/nyc-wifi. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-## Build
+## License
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+The app is available as open source under the terms of the [Apache 2 License](https://opensource.org/licenses/Apache-2.0).
 
-## Running unit tests
+## Code of Conduct
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Everyone interacting in the Filth Finder codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/nyc-wifi/blob/master/CODE_OF_CONDUCT.md).
