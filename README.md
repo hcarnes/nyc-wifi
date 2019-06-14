@@ -1,6 +1,6 @@
 # 🔥 NYC Wifi Hotpots 🔥   
 
-Users can find NYC wifi hotspots near them on a map, click on a hotspot marker, and view details about the hotspot. Data fetech from [NYC's Open Data API](https://data.cityofnewyork.us/Social-Services/NYC-Wi-Fi-Hotspot-Locations/a9we-mtpn).
+Users can find NYC wifi hotspots near them on a map, click on a hotspot marker, and view details about the hotspot. Data fetched from [NYC's Open Data API](https://data.cityofnewyork.us/Social-Services/NYC-Wi-Fi-Hotspot-Locations/a9we-mtpn).
 
 ## Installation
 Clone this repository.
